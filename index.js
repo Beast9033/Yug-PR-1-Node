@@ -4,12 +4,13 @@ import envConfig from './configs/envConfig.js'
 import db from './configs/database.js'
 import userRouter from './routes/user.route.js'
 import bookRouter from './routes/book.route.js'
+import connectDatabase from './configs/database.js'
 
 const port = envConfig.PORT || 8081;
 
 const app = express();
 
-db();
+connectDatabase();
 
 app.use(cookieParser());
 app.use(express.json());
